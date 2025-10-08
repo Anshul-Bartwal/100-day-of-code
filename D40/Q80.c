@@ -1,47 +1,52 @@
-// /Multiply two matrices.
 #include <stdio.h>
 int main(){
-    int r1,c1;
-    int r2,c2;
-    printf("Enter number of rows and columns: of M1 ");
-    scanf("%d %d",&r1,&c1);
-    printf("Enter number of rows and columns: of M2 ");
-    scanf("%d %d",&r2,&c2);
-
-    if (c1!=r2){
-        printf("Cant Multipy");
-        return 0;
-    }
-    int m1[r1][c1];
-    int m2[r2][c2];
-    int mulMat[r1][c2];
-
-    printf("Enter elements of matrix 1: \n");
-    for(int row=0;row<r1;row++){
-        for(int col=0;col<c1;col++){
-            scanf("%d", &m1[row][col]);
-            // printf("hi");
+    int i1,j1;
+    printf("Enter Matrix type for Matrix 1 (i1 j1): \n");
+    scanf("%d %d", &i1, &j1);
+    int mat1[i1][j1];
+    printf("Enter matrix elements: \n");
+    for (int a = 0; a<i1; a++){
+        for (int b=0; b<j1; b++) {
+            scanf("%d", &mat1[a][b]);
         }
     }
 
-    printf("Enter elements of matrix 2: \n");
-    for(int row=0;row<r2;row++){
-        for(int col=0;col<c2;col++){
-            scanf("%d", &m2[row][col]);
-        }
-    }
-    
-    for(int i=0;i<r1;i++){
-        int sum=0;
-        for(int j=0;j<c1;j++){
-            sum+=m1[i][j]*m2[j][i];
-            printf(" %d ",sum);
-            
+    int i2,j2;
+    printf("Enter Matrix type for Matrix 2 (i2 j2): \n");
+    scanf("%d %d", &i2, &j2);
+    int mat2[i2][j2];
+    printf("Enter matrix elements: \n");
+    for (int a = 0; a < i2; a++){
+        for (int b=0; b<j2 ; b++) {
+            scanf("%d", &mat2[a][b]);
         }
     }
 
-  
-    
-    return 0;
+    if (j1 != i2){
+        printf("Multiplication Not Possible.");
+    }
+    else {
+        int prodmat[i1][j2];
+        // making values of elements zero to remove garbage values
+        for (int a = 0; a < i1; a++){
+            for (int b = 0; b < j2; b++){
+                prodmat[a][b] = 0;
+            }
+        }
+
+        for (int a =0; a<i1; a++){
+            for (int b = 0; b < j2; b++){
+                for (int k = 0; k < j1; k++){
+                    prodmat[a][b] += mat1[a][k] * mat2[k][b];
+                }
+            }
+        }
+        printf("Product matrix \n");
+        for (int a = 0; a < i1; a++) {
+            for (int b = 0; b < j2; b++) {
+                printf("%d ", prodmat[a][b]);
+            }
+            printf("\n");
+        }
+    }
 }
-//in progress
