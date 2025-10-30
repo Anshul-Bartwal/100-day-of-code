@@ -1,14 +1,5 @@
-# Day 61 - Coding Challenge
+// Q111: Write a program to take an integer array arr and an integer k as inputs. The task is to find the first negative integer in each subarray of size k moving from left to right. If no negative exists in a window, print "0" for that window. Print the results separated by spaces as output.
 
-## Question 1  
-**Problem:**  
-Q111: Write a program to take an integer array arr and an integer k as inputs. The task is to find the first negative integer in each subarray of size k moving from left to right. If no negative exists in a window, print "0" for that window. Print the results separated by spaces as output.
-
-**Concept Used**
-- Sliding Window  and Queue
-
-**Code:**  
-```c
 #include <stdio.h>
 int main(){
     int n;
@@ -62,16 +53,3 @@ int main(){
     }
     return 0;
 }
-
-```
-
-**Sample Output:**  
-```
-Enter n: 5
-Enter elements: -8 2 3 -6 10
-Enter k: 2
--8 0 -6 -6 
-```
-
----
-
