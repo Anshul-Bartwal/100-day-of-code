@@ -15,36 +15,38 @@ int main(){
     printf("Enter k: ");
     scanf("%d",&k);
 
-    int l=0;
-    int r=k-1;
-    
-    
-    int max=arr[l];
-    int secondMax=0;
-    for(int i=0;i<=r ;i++){
-        if(arr[i]>max){
-            secondMax=max;
-            max=arr[i];
+    int dequeue[n];
+    int front =0;
+    int rear=0;
 
+    // initial dequeue
+    for(int i=0;i<k;i++){
+        while(front<rear && arr[i]>arr[dequeue[rear-1]]){
+            rear--;
         }
+
+        dequeue[rear++] = i;
     }
 
-
-    
+    printf("%d ", arr[dequeue[front]]);
     for(int i=k;i<n;i++){
-        if(arr[l] == max){
-            if(arr[i] > secondMax){
-                
-                max = arr[i];
-
-            }else if(arr[i] < secondMax){
-                max=secondMax;
-            }
+        //remove elements outside of window
+        while(front<rear && dequeue[front] < i-k){
+            front++;
         }
-        l++;
 
+        //removing smaller elements
+        while (front<rear  && arr[i]>arr[dequeue[rear-1]]){
+            rear--;
+        }
+
+        dequeue[rear++] =i;
+
+        printf(" %d ",arr[dequeue[front]]);
+        
         
     }
-    printf(":%d ",max);
+
+    return 0;
 
 }
