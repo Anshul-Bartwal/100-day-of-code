@@ -9,3 +9,4 @@ Questions from this challenge are from [This page](https://maitysoumik.github.io
 
 ### Algorithms:
 - [Boyer Moore's Algorithm](D55\D55.md): For majority vote
+- [Kadane's Algorithm](D62\D62.md): For maximum sum of subarray
