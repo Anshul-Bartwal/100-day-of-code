@@ -6,3 +6,6 @@ tempCodeRunnerFile*
 
 # Ignore day_template.md file
 DAY_TEMPLATE.md
+
+# Ignore .vscode folder
+.vscode/
