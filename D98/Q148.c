@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <string.h>
+typedef struct 
+{
+    char name[50];
+    int roll;
+    int marks;
+} Student;
+
+int main(){
+    Student s;
+    printf("Student 1\n");
+    printf("Enter name: ");
+    scanf("%s",s.name);
+
+    printf("Enter Roll No. : ");
+    scanf("%d",&s.roll);
+
+    printf("Enter Marks : ");
+    scanf("%d",&s.marks);
+
+    printf("Student 2\n");
+
+    Student d;
+    printf("Enter name: ");
+    scanf("%s",d.name);
+
+    printf("Enter Roll No. : ");
+    scanf("%d",&d.roll);
+
+    printf("Enter Marks : ");
+    scanf("%d",&d.marks);
+
+    if (s.marks == s.marks
+    && s.roll == d.roll
+        && (strcmp(s.name,d.name) == 0)  )
+        {
+            printf("Same");
+        }else{
+            printf("Not same");
+        }
+
+    return 0;
+
+
+}
